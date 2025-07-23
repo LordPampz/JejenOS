@@ -279,6 +279,159 @@ body {
     overflow: auto;
 }
 
+/* Terminal */
+.terminal {
+    background: #1a1a1a;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.terminal-header {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    padding: 8px 15px;
+    font-size: 12px;
+    border-bottom: 1px solid #444;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.terminal-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.terminal-controls {
+    display: flex;
+    gap: 5px;
+}
+
+.terminal-control {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 10px;
+    transition: opacity 0.2s;
+}
+
+.terminal-control:hover {
+    opacity: 0.8;
+}
+
+.terminal-output {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    font-size: 14px;
+    line-height: 1.4;
+    background: linear-gradient(45deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+.terminal-input-line {
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    background: #1a1a1a;
+    border-top: 1px solid #333;
+    gap: 8px;
+}
+
+.terminal-prompt {
+    color: #00ff00;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.terminal-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    caret-color: #00ff00;
+}
+
+.terminal-cursor {
+    background: #00ff00;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+.command-output {
+    color: #ffffff;
+    margin: 5px 0;
+}
+
+.command-input {
+    color: #00ff00;
+    margin: 2px 0;
+}
+
+.command-error {
+    color: #ff6b6b;
+    margin: 5px 0;
+}
+
+.command-success {
+    color: #51cf66;
+    margin: 5px 0;
+}
+
+.command-info {
+    color: #74c0fc;
+    margin: 5px 0;
+}
+
+.command-warning {
+    color: #ffd43b;
+    margin: 5px 0;
+}
+
+.ascii-art {
+    color: #00ff00;
+    font-size: 12px;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+
+.file-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 5px;
+    margin: 10px 0;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 2px 0;
+    color: #ffffff;
+}
+
+.file-item.folder {
+    color: #74c0fc;
+}
+
+.file-item.executable {
+    color: #51cf66;
+}
+
 /* Aplicaciones específicas */
 .calculator {
     width: 300px;

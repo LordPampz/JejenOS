@@ -24,6 +24,10 @@
                 <div class="icon">📁</div>
                 <span>Archivos</span>
             </div>
+            <div class="desktop-icon" data-app="terminal">
+                <div class="icon">💻</div>
+                <span>Terminal</span>
+            </div>
         </div>
     </div>
 
@@ -62,6 +66,10 @@
             <div class="start-app" data-app="file-manager">
                 <span class="icon">📁</span>
                 <span>Explorador de Archivos</span>
+            </div>
+            <div class="start-app" data-app="terminal">
+                <span class="icon">💻</span>
+                <span>Terminal</span>
             </div>
             <div class="start-app" data-app="settings">
                 <span class="icon">⚙️</span>
