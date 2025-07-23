@@ -1,0 +1,360 @@
+/* JejenOS - Estilos principales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+/* Escritorio */
+.desktop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 50px);
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🦟</text></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 200px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.desktop-icons {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.desktop-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.desktop-icon:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.desktop-icon .icon {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.desktop-icon span {
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Barra de tareas */
+.taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
+    border-top: 1px solid #34495e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    z-index: 1000;
+}
+
+.taskbar-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.start-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.start-button:hover {
+    background: linear-gradient(135deg, #2980b9, #3498db);
+    transform: translateY(-1px);
+}
+
+.mosquito-logo {
+    font-size: 18px;
+}
+
+.taskbar-apps {
+    display: flex;
+    gap: 5px;
+}
+
+.taskbar-app {
+    padding: 5px 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.2s;
+}
+
+.taskbar-app:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.taskbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.clock {
+    color: white;
+    font-size: 14px;
+    padding: 5px 10px;
+}
+
+/* Menú de inicio */
+.start-menu {
+    position: fixed;
+    bottom: 50px;
+    left: 10px;
+    width: 300px;
+    background: rgba(44, 62, 80, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    transition: all 0.3s ease;
+}
+
+.start-menu.hidden {
+    transform: translateY(20px);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.start-menu-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    border-radius: 10px 10px 0 0;
+    font-weight: bold;
+}
+
+.start-menu-apps {
+    padding: 10px;
+}
+
+.start-app {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 15px;
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+.start-app:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.start-app .icon {
+    font-size: 20px;
+    width: 24px;
+}
+
+.start-menu-footer {
+    padding: 10px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.power-btn {
+    width: 100%;
+    padding: 10px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.power-btn:hover {
+    background: #c0392b;
+}
+
+/* Ventanas */
+.window {
+    position: absolute;
+    min-width: 400px;
+    min-height: 300px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    z-index: 100;
+    transition: all 0.2s;
+}
+
+.window.active {
+    z-index: 101;
+}
+
+.window-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    cursor: move;
+    user-select: none;
+}
+
+.window-title {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.window-controls {
+    display: flex;
+    gap: 5px;
+}
+
+.window-control {
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    transition: opacity 0.2s;
+}
+
+.window-control:hover {
+    opacity: 0.8;
+}
+
+.minimize { background: #f39c12; color: white; }
+.maximize { background: #27ae60; color: white; }
+.close { background: #e74c3c; color: white; }
+
+.window-content {
+    padding: 20px;
+    height: calc(100% - 50px);
+    overflow: auto;
+}
+
+/* Aplicaciones específicas */
+.calculator {
+    width: 300px;
+    height: 400px;
+}
+
+.calculator-display {
+    width: 100%;
+    padding: 15px;
+    font-size: 24px;
+    text-align: right;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.calculator-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.calc-btn {
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    background: #ecf0f1;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.calc-btn:hover {
+    background: #bdc3c7;
+}
+
+.calc-btn.operator {
+    background: #3498db;
+    color: white;
+}
+
+.calc-btn.operator:hover {
+    background: #2980b9;
+}
+
+.notepad-textarea {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    resize: none;
+}
+
+/* Utilidades */
+.hidden {
+    display: none !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .desktop-icons {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .start-menu {
+        width: calc(100vw - 20px);
+        left: 10px;
+    }
+    
+    .window {
+        width: calc(100vw - 20px) !important;
+        height: calc(100vh - 70px) !important;
+        top: 10px !important;
+        left: 10px !important;
+    }
+}
